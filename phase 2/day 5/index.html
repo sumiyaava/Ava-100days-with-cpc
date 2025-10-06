@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS — Ticket System</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f4f6f9;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: #fff;
+      color: #333;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    header h2 {
+      margin: 0;
+      font-weight: 600;
+    }
+    nav a {
+      color: #333;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a.ticket-btn {
+      background: #6c63ff;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+
+    /* Dashboard Cards */
+    .dashboard {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 40px;
+    }
+    .card {
+      flex: 1;
+      text-align: center;
+      border-radius: 12px;
+      padding: 40px 0;
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      background: linear-gradient(135deg, #7c83fd, #a29bfe);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .resolved {
+      background: linear-gradient(135deg, #4cd137, #6de89a);
+    }
+
+    /* Main layout */
+    .main-content {
+      display: flex;
+      margin: 0 40px 60px 40px;
+      gap: 30px;
+    }
+
+    /* Customer Tickets (Grid Layout) */
+    .tickets {
+      flex: 2;
+    }
+    .tickets h3 {
+      margin-bottom: 20px;
+      color: #444;
+      font-size: 18px;
+    }
+    .ticket-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    .ticket {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+    .ticket:hover {
+      transform: translateY(-3px);
+    }
+    .ticket h4 {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .ticket p {
+      font-size: 13px;
+      color: #666;
+      margin-top: 6px;
+    }
+    .ticket-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      font-size: 12px;
+      color: #555;
+    }
+    .status {
+      padding: 3px 8px;
+      border-radius: 20px;
+      font-size: 11px;
+      color: white;
+    }
+    .open { background: #2ecc71; }
+    .inprog { background: #f39c12; }
+
+    .priority-high { color: #e74c3c; font-weight: bold; }
+    .priority-medium { color: #f39c12; font-weight: bold; }
+    .priority-low { color: #3498db; font-weight: bold; }
+
+    /* Sidebar */
+    .sidebar {
+      flex: 1;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      height: fit-content;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .sidebar h3 {
+      margin-top: 0;
+      color: #444;
+    }
+    .task {
+      background: #f4f6f9;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 6px;
+    }
+    .task button {
+      background: #4cd137;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #fff;
+      color: #666;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h2>CS — Ticket System</h2>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">FAQ</a>
+      <a href="#">Changelog</a>
+      <a href="#">Blog</a>
+      <a href="#">Download</a>
+      <a href="#">Contact</a>
+      <a href="#" class="ticket-btn">+ New Ticket</a>
+    </nav>
+  </header>
+
+  <!-- Dashboard -->
+  <div class="dashboard">
+    <div class="card in-progress">In-Progress<br>0</div>
+    <div class="card resolved">Resolved<br>0</div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Left: Tickets -->
+    <div class="tickets">
+      <h3>Customer Tickets</h3>
+      <div class="ticket-grid">
+
+        <div class="ticket">
+          <h4>Login Issues — Can't Access Account <span class="status open">Open</span></h4>
+          <p>Customer is unable to log in to their account. Tried resetting password multiple times.</p>
+          <div class="ticket-footer">
+            <span>#1001 • <span class="priority-high">HIGH PRIORITY</span></span>
+            <span>John Smith • 1/15/2024</span>
+          </div>
+        </div>
+
+        <div class="ticket">
+          <h4>Payment Failed — Card Declined <span class="status open">Open</span></h4>
+          <p>Payment failed using Visa ending 1234. Insufficient balance issue reported.</p>
+          <div class="ticket-footer">
+            <span>#1002 • <span class="priority-high">HIGH PRIORITY</span></span>
+            <span>Sarah Johnson • 1/16/2024</span>
+          </div>
+        </div>
+
+        <div class="ticket">
+          <h4>Unable to Download Invoice <span class="status inprog">In-Progress</span></h4>
+          <p>Customer cannot download their January invoice from billing section.</p>
+          <div class="ticket-footer">
+            <span>#1003 • <span class="priority-medium">MEDIUM PRIORITY</span></span>
+            <span>Michael Brown • 1/17/2024</span>
+          </div>
+        </div>
+
+        <div class="ticket">
+          <h4>Incorrect Billing Address <span class="status open">Open</span></h4>
+          <p>Customer’s billing address shows a different city after update.</p>
+          <div class="ticket-footer">
+            <span>#1004 • <span class="priority-low">LOW PRIORITY</span></span>
+            <span>Emily Davis • 1/18/2024</span>
+          </div>
+        </div>
+
+        <div class="ticket">
+          <h4>Refund Not Processed <span class="status inprog">In-Progress</span></h4>
+          <p>Customer requested a refund two weeks ago but hasn’t received it yet.</p>
+          <div class="ticket-footer">
+            <span>#1005 • <span class="priority-medium">MEDIUM PRIORITY</span></span>
+            <span>Sophia Taylor • 1/20/2024</span>
+          </div>
+        </div>
+
+        <div class="ticket">
+          <h4>App Crash on Launch <span class="status open">Open</span></h4>
+          <p>Customer reports that the app crashes immediately on Android 13.</p>
+          <div class="ticket-footer">
+            <span>#1006 • <span class="priority-high">HIGH PRIORITY</span></span>
+            <span>David Wilson • 1/22/2024</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Right: Sidebar -->
+    <div class="sidebar">
+      <h3>Task Status</h3>
+      <p>Select a ticket to add to Task Status.</p>
+
+      <h3>Resolved Task</h3>
+      <p>No resolved tasks yet.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>© 2025 CS Ticket System. All rights reserved.</footer>
+
+</body>
+</html>
