@@ -69,7 +69,6 @@
       gap: 30px;
     }
 
-    
     .tickets {
       flex: 2;
     }
@@ -119,6 +118,7 @@
     }
     .inprog {
       background: #f1c40f;
+      color: #222;
     }
 
     .priority-high {
@@ -202,31 +202,28 @@
 
     
     footer {
-      background: #222;
+      background: #111;
       color: white;
-      text-align: center;
-      padding: 10px;
-      font-size: 13px;
+      padding: 50px 40px 20px 40px;
     }
     .footer-content {
       display: grid;
-      grid-template-columns: repeat(4,1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 40px;
       margin-bottom: 30px;
     }
-  .footer-section h4 {
-    margin-bottom: 15px;
-    font-size: 16px;
-    font-weight: 600;
-  }
-  .footer-section p, .footer-section a {
-
-    display: block;
-    color: #ccc;
-    text-decoration: none;
-    margin-bottom: 6px;
-    font-size: 14px;
-  }
+    .footer-section h4 {
+      margin-bottom: 15px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .footer-section p, .footer-section a {
+      font-size: 14px;
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 6px;
+    }
     .footer-section a:hover {
       color: #fff;
     }
@@ -239,7 +236,9 @@
     }
   </style>
 </head>
+
 <body>
+  
   <header>
     <h2>CS — Ticket System</h2>
     <nav>
@@ -253,17 +252,13 @@
     </nav>
   </header>
 
+  
   <div class="dashboard">
-    <div class="card in-progress">
-      In-Progress<br />
-      0
-    </div>
-    <div class="card resolved">
-      Resolved<br />
-      0
-    </div>
+    <div class="card in-progress">In-Progress<br />0</div>
+    <div class="card resolved">Resolved<br />0</div>
   </div>
 
+  
   <div class="main-content">
     <div class="tickets">
       <h3>Customer Tickets</h3>
@@ -273,86 +268,92 @@
           <p>Customer unable to log in; password reset failed multiple times.</p>
           <div class="ticket-footer">
             <span>#1001 <span class="priority-high">HIGH PRIORITY</span></span>
-            <span>John Smith  1/15/2024</span>
+            <span>John Smith • 1/15/2024</span>
           </div>
         </div>
+
         <div class="ticket">
           <h4>Payment Failed — Card Declined <span class="status open">Open</span></h4>
           <p>Visa ending 1234 failed due to insufficient balance.</p>
           <div class="ticket-footer">
-            <span>#1002  <span class="priority-high">HIGH PRIORITY</span></span>
+            <span>#1002 <span class="priority-high">HIGH PRIORITY</span></span>
             <span>Sarah Johnson • 1/16/2024</span>
           </div>
         </div>
+
         <div class="ticket">
           <h4>Unable to Download Invoice <span class="status inprog">In-Progress</span></h4>
           <p>Customer cannot download their January invoice.</p>
           <div class="ticket-footer">
-            <span>#1003  <span class="priority-medium">MEDIUM PRIORITY</span></span>
+            <span>#1003 <span class="priority-medium">MEDIUM PRIORITY</span></span>
             <span>Michael Brown • 1/17/2024</span>
           </div>
         </div>
+
         <div class="ticket">
           <h4>Incorrect Billing Address <span class="status open">Open</span></h4>
           <p>Customer’s billing address shows incorrect city.</p>
           <div class="ticket-footer">
-            <span>#1004  <span class="priority-low">LOW PRIORITY</span></span>
+            <span>#1004 <span class="priority-low">LOW PRIORITY</span></span>
             <span>Emily Davis • 1/18/2024</span>
           </div>
         </div>
+
         <div class="ticket">
           <h4>App Crash on Launch <span class="status open">Open</span></h4>
           <p>Mobile app crashes immediately on Android 13.</p>
           <div class="ticket-footer">
-            <span>#1005  <span class="priority-high">HIGH PRIORITY</span></span>
+            <span>#1005 <span class="priority-high">HIGH PRIORITY</span></span>
             <span>David Wilson • 1/19/2024</span>
           </div>
         </div>
+
         <div class="ticket">
           <h4>Refund Not Processed <span class="status inprog">In-Progress</span></h4>
           <p>Refund request from two weeks ago still pending.</p>
           <div class="ticket-footer">
-            <span>#1006  <span class="priority-medium">MEDIUM PRIORITY</span></span>
+            <span>#1006 <span class="priority-medium">MEDIUM PRIORITY</span></span>
             <span>Sophia Taylor • 1/20/2024</span>
           </div>
         </div>
+
         <div class="ticket">
           <h4>Two-Factor Authentication Issue <span class="status open">Open</span></h4>
           <p>Customer not receiving 2FA codes on their phone.</p>
           <div class="ticket-footer">
-            <span>#1007  <span class="priority-high">HIGH PRIORITY</span></span>
+            <span>#1007 <span class="priority-high">HIGH PRIORITY</span></span>
             <span>James Anderson • 1/21/2024</span>
           </div>
         </div>
-        <div  class="ticket">
-        <h4>Unable to Update Profile Picture <span class="status open">Open</span></h4>
-        <p>Customer tries to upload a new profile picture but gets 'Upload failed'error.</p>
-        <div class="ticket-footer">
-          <span>#1008 <span class="priority-low">LOW PRIORITY</span></span>
-          <span>Olivia Martinez <span class="date-text">1/22/2024</span></span>
 
-        </div>
-      </div>
-       <div class="ticket">
-        <h4>Subscription Auto-Renewal</h4>
-        <p>Customer wants to enable auto-renewal for their subscription but the toggle is disable</p>
-       <div class="ticket-footer">
-        <span>#1009 <span class="priority-medium">MEDIUM PRIORITY</span></span>
-        <span>Liam Thomas • 1/17/2024</span>
-       </div>
-      </div>
-
-      
-       <div class="ticket">
-          <h4>Missing Order Confirmation Email <span class="status open">Open</span></h4>
-          <p>Order placed but confirmation email not received.</p>
+        <div class="ticket">
+          <h4>Unable to Update Profile Picture <span class="status open">Open</span></h4>
+          <p>Upload failed error when trying to change profile picture.</p>
           <div class="ticket-footer">
-            <span>#1008  <span class="priority-low">LOW PRIORITY</span></span>
+            <span>#1008 <span class="priority-low">LOW PRIORITY</span></span>
             <span>Olivia Martinez • 1/22/2024</span>
           </div>
         </div>
 
-        
+        <div class="ticket">
+          <h4>Subscription Auto-Renewal <span class="status inprog">In-Progress</span></h4>
+          <p>Customer wants to enable auto-renewal but toggle is disabled.</p>
+          <div class="ticket-footer">
+            <span>#1009 <span class="priority-medium">MEDIUM PRIORITY</span></span>
+            <span>Liam Thomas • 1/17/2024</span>
+          </div>
+        </div>
+
+        <div class="ticket">
+          <h4>Missing Order Confirmation Email <span class="status open">Open</span></h4>
+          <p>Order placed but confirmation email not received.</p>
+          <div class="ticket-footer">
+            <span>#1010 <span class="priority-medium">MEDIUM PRIORITY</span></span>
+            <span>Isabella Garcia • 1/24/2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="sidebar">
       <div>
@@ -379,10 +380,36 @@
       </div>
     </div>
   </div>
-  <div class="footer-bottom">
 
-  </div>
-
-  <footer>&copy; 2025 CS Ticket System. All rights reserved.</footer>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>CS — Ticket System</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Company</h4>
+        <a href="#">About Us</a>
+        <a href="#">Our Mission</a>
+        <a href="#">Contact Sales</a>
+      </div>
+      <div class="footer-section">
+        <h4>Services</h4>
+        <a href="#">Products & Services</a>
+        <a href="#">Customer Stories</a>
+        <a href="#">Download Apps</a>
+      </div>
+      <div class="footer-section">
+        <h4>Information</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Join Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 CS — Ticket System. All rights reserved.
+    </div>
+  </footer>
 </body>
 </html>
