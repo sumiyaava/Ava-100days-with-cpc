@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Var, Let & Const Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      color: #333;
+      padding: 20px;
+    }
+    h2 {
+      color: #0077cc;
+    }
+    .output {
+      background: #e6f2ff;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 15px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <h2>JavaScript: var, let & const Example</h2>
+  <div class="output" id="result"></div>
+
+  <script>
+    var name = "Sumaiya";
+    
+    let age = 22;
+    
+    const country = "Bangladesh";
+
+    
+    name = "Ava";
+    age = 23;
+    
+
+    
+    let result = `
+      <b>Using var:</b> ${name} <br>
+      <b>Using let:</b> ${age} <br>
+      <b>Using const:</b> ${country} <br><br>
+      <i>Note:</i> You can change <b>var</b> and <b>let</b> values, but not <b>const</b>!
+    `;
+
+    document.getElementById("result").innerHTML = result;
+  </script>
+</body>
+</html>
