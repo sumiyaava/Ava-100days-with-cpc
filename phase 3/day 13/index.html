@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Var Let Const Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      padding: 20px;
+      transition: background 0.6s;
+    }
+    h2 {
+      color: #0077cc;
+    }
+    .box {
+      background: #eef6ff;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 10px;
+      transition: background 0.6s;
+    }
+    button {
+      margin-top: 15px;
+      padding: 8px 15px;
+      border: none;
+      background: #0077cc;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    button:hover {
+      background: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <h2>JavaScript var, let & const</h2>
+  <div class="box" id="output"></div>
+  <button onclick="updateInfo()">Change Info</button>
+  <button onclick="resetInfo()">Reset Info</button>
+
+  <script>
+    var city = "Dhaka";
+    let temperature = 30;
+    const country = "Bangladesh";
+
+    function showInfo(extra = "") {
+      let text = `
+        <b>City (var):</b> ${city} <br>
+        <b>Temperature (let):</b> ${temperature}°C <br>
+        <b>Country (const):</b> ${country} <br><br>
+        JavaScript makes web pages interactive.<br>
+        Var, Let, and Const are used to store data.<br>
+        Let and Const were introduced in ES6.<br>
+        Const is used for values that never change.<br>
+        ${extra}
+      `;
+      document.getElementById("output").innerHTML = text;
+    }
+
+    function updateInfo() {
+      city = "Sylhet";
+      temperature = 28;
+      document.body.style.background = "#e8ffe8";
+      document.querySelector(".box").style.background = "#d1f7d1";
+      showInfo("<b style='color:green;'>Information updated successfully!</b>");
+    }
+
+    function resetInfo() {
+      city = "Dhaka";
+      temperature = 30;
+      document.body.style.background = "#f9f9f9";
+      document.querySelector(".box").style.background = "#eef6ff";
+      showInfo("<b style='color:#0077cc;'>Information reset to default!</b>");
+    }
+
+    showInfo();
+  </script>
+</body>
+</html>
