@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Counter Using JS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: #f0f0f0;
+    }
+    .counter-box {
+      background: #ffd54f;
+      padding: 30px;
+      border-radius: 15px;
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 24px;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      border: none;
+      background-color: #1976d2;
+      color: white;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #0d47a1;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Simple Counter App</h2>
+  <div class="counter-box" id="counter">0</div><br>
+  <button onclick="increase()">Increase</button>
+  <button onclick="decrease()">Decrease</button>
+  <button onclick="reset()">Reset</button>
+
+  <script>
+    var counter = 0;
+    const step = 1;
+    let output = document.getElementById("counter");
+
+    function increase() {
+      counter += step;
+      output.innerText = counter;
+    }
+
+    function decrease() {
+      counter -= step;
+      output.innerText = counter;
+    }
+
+    function reset() {
+      counter = 0;
+      output.innerText = counter;
+    }
+  </script>
+
+</body>
+</html>
