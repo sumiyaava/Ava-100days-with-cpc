@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Multiply 10 × 2</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+      }
+      #result {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Multiplication Result</h2>
+    <div id="result"></div>
+    
+    <script>
+      const a = 10;
+      const b = 2;
+      const product = a * b;
+
+      console.log(product);
+
+      document.getElementById('result').textContent = `${a} × ${b} = ${product}`;
+    </script>
+  </body>
+</html>
