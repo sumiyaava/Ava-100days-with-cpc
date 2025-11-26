@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Loops</h1>
+<h2>The for Loop</h2>
+
+<p id="demo"></p>
+
+<script>
+const food = ["cake", "biscuit", "ice cream"];
+let len = food.length;
+
+let text = "";
+for (let i = 0; i < len; i++) {
+  text += food[i] + "<br>";
+}
+
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>
